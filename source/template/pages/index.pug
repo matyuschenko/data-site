@@ -4,4 +4,15 @@ block variables
     - var title = "Главная страница"
 
 block content
-    p Hello, world!
+    section Главный раздел, список источников
+        +source("Источник 1")
+        +source("Источник 2")
+        +source("Источник 3")
+    aside
+        nav
+            ul
+                li Расширенный поиск
+                li Добавить источник
+                li О проекте
+                li Написать авторам
+                li Авторизация

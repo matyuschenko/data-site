@@ -25,8 +25,6 @@ gulp.task('serve', function () {
     });
 
     browserSync.watch(buildFolder + '/**/*.*', browserSync.reload);
-    // return gulp.watch(buildFolder + '/**/*.*').on('change', browserSync.reload);
-    // browserSync.watch(buildFolder + '/*.*').on('change', browserSync.reload);
 });
 
 gulp.task('watch', function () {

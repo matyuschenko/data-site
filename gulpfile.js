@@ -6,6 +6,11 @@ var gulp = require('gulp'),
     buildFolder = './build',
     sourceFolder = './source';
 
+gulp.task('data', function () {
+    return gulp.src('./data/*.json')
+        .pipe(gulp.dest(buildFolder + '/data'))
+});
+
 gulp.task('pug', function () {
     return gulp.src(sourceFolder + '/template/pages/*.pug')
         .pipe(pug())
@@ -19,6 +24,11 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(buildFolder + '/css'))
 });
 
+gulp.task('js', function () {
+    return gulp.src(sourceFolder + '/js/*.js')
+        .pipe(gulp.dest(buildFolder + '/js'))
+})
+
 gulp.task('serve', function () {
     browserSync.init({
         server: buildFolder
@@ -30,11 +40,14 @@ gulp.task('serve', function () {
 gulp.task('watch', function () {
     gulp.watch(sourceFolder + '/template/**/*.pug', gulp.series('pug'));
     gulp.watch(sourceFolder + '/style/**/*.scss', gulp.series('sass'));
+    gulp.watch(sourceFolder + '/js/**/*.js', gulp.series('js'));
 });
 
 gulp.task('default', gulp.series(
+    'data',
     'pug',
     'sass',
+    'js',
     gulp.parallel(
         'watch',
         'serve'

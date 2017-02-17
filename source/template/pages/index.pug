@@ -4,11 +4,13 @@ block variables
     - var title = "Главная страница"
 
 block content
-    section Главный раздел, список источников
+    section.sources
+        input(type="search" placeholder="Find sources")
+
         +source("Источник 1")
         +source("Источник 2")
         +source("Источник 3")
-    aside
+    aside.menu
         nav
             ul
                 li Расширенный поиск

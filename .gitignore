@@ -3,3 +3,6 @@ build
 
 # Node.JS
 node_modules
+
+# Data
+data

@@ -1,0 +1,39 @@
+.content-wrapper {
+  //padding: 40px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sources__search {
+  width: 100%;
+  font-size: 60px;
+  font-weight: 100;
+}
+
+.source {
+  margin: 40px;
+  padding: 20px;
+  border: 1px solid $dark-gray;
+}
+
+.menu {
+  width: 25%;
+  padding: 20px;
+  background-color: $dark-gray;
+}
+
+.menu__list {
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $light-gray;
+  list-style-type: none;
+}
+
+.menu__item {
+  margin-bottom: 15px;
+}

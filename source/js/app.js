@@ -1,4 +1,4 @@
-var lang = 'eng';
+var lang = 'en';
 
 $(window).on('load', function () {
     $.getJSON("/data/locale.json", function (locale) {
@@ -16,6 +16,7 @@ function showSources(sources) {
     $(sources).each(function(i, s) {
         var source = $('<div>').addClass('source'),
             countries,
+            languages,
             spheres,
             examples,
             tags;
@@ -24,6 +25,7 @@ function showSources(sources) {
         $('<a>').addClass('source__link').attr('href', s['url']).html(s['url']).appendTo(source);
         $('<p>').addClass('source__description').html(s['description_' + lang]).appendTo(source);
         countries = $('<ul>').addClass('source__countries').appendTo(source);
+        languages = $('<ul>').addClass('source__languages').appendTo(source);
         $('<span>').addClass('source__period').html(s['period']).appendTo(source);
         $('<span>').addClass('source__machine-readable_' + s['machine_readability']).appendTo(source);
         spheres = $('<ul>').addClass('source__spheres').appendTo(source);
@@ -32,6 +34,10 @@ function showSources(sources) {
 
         $(s['countries']).each(function (i, c) {
             $('<li>').addClass('source__country').html(c).appendTo(countries);
+        });
+
+        $(s['languages']).each(function (i, c) {
+            $('<li>').addClass('source__language').html(c).appendTo(languages);
         });
 
         $(s['spheres']).each(function (i, c) {

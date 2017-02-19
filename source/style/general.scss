@@ -1,8 +1,10 @@
-$light-gray: #fafafa;
-$dark-gray: #424242;
+$lightest-gray: #fafafa;
+$light-gray: #a8a6a6;
+$dark-gray: #767676;
+$darkest-gray: #424242;
 
 body {
   font-family: "Helvetica Neue", Tahoma, sans-serif;
-  background-color: $light-gray;
-  color: $dark-gray;
+  background-color: $lightest-gray;
+  color: $darkest-gray;
 }

@@ -14,13 +14,13 @@
 .source {
   margin: 40px;
   padding: 20px;
-  border: 1px solid $dark-gray;
+  border: 1px solid $darkest-gray;
 }
 
 .menu {
   width: 25%;
   padding: 20px;
-  background-color: $dark-gray;
+  background-color: $darkest-gray;
 }
 
 .menu__list {
@@ -30,7 +30,7 @@
   font-weight: 100;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $light-gray;
+  color: $lightest-gray;
   list-style-type: none;
 }
 

@@ -45,23 +45,23 @@ function showSources(sources) {
         examples = $('<ul>').addClass('source__examples').appendTo(source);
         tags = $('<ul>').addClass('source__tags').appendTo(source);
 
-        $(s['countries']).each(function (i, c) {
+        $(s['countries'].split(';')).each(function (i, c) {
             $('<li>').addClass('source__country').html(c).appendTo(countries);
         });
 
-        $(s['languages']).each(function (i, c) {
+        $(s['languages'].split(';')).each(function (i, c) {
             $('<li>').addClass('source__language').html(c).appendTo(languages);
         });
 
-        $(s['spheres']).each(function (i, c) {
+        $(s['spheres'].split(';')).each(function (i, c) {
             $('<li>').addClass('source__sphere').html(c).appendTo(spheres);
         });
 
-        $(s['examples' + lang]).each(function (i, c) {
+        $(s['examples_' + lang].split(';')).each(function (i, c) {
             $('<li>').addClass('source__example').html(c).appendTo(examples);
         });
 
-        $(s['tags']).each(function (i, c) {
+        $(s['tags'].split(';')).each(function (i, c) {
             $('<li>').addClass('source__tag').html(c).appendTo(tags);
         });
 

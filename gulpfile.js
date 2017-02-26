@@ -7,7 +7,7 @@ var gulp = require('gulp'),
     sourceFolder = './source';
 
 gulp.task('data', function () {
-    return gulp.src('./data/*.*')
+    return gulp.src('./data/*.json')
         .pipe(gulp.dest(buildFolder + '/data'))
 });
 

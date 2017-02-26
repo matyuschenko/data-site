@@ -7,11 +7,24 @@ $(window).on('load', function () {
 
     $.getJSON("/data/sources.json", function (sources) {
         showSources(sources);
+
+        $('.sources__search').on('keyup', function(event) {
+            searchSources(event, sources);
+        });
     });
+
 });
+
+function addLabels(locale) {
+    for (var selector in locale[lang]) {
+        $(selector).html(locale[lang][selector]);
+    }
+}
 
 function showSources(sources) {
     var container = $('.sources');
+
+    container.html('');
 
     $(sources).each(function(i, s) {
         var source = $('<div>').addClass('source'),
@@ -52,13 +65,22 @@ function showSources(sources) {
             $('<li>').addClass('source__tag').html(c).appendTo(tags);
         });
 
-
         container.append(source);
     });
 }
 
-function addLabels(locale) {
-    for (var selector in locale[lang]) {
-        $(selector).html(locale[lang][selector]);
+function searchSources(event, sources) {
+    query = event.target.value;
+    if (query == '') {
+        showSources(sources);
+    } else {
+        filteredSources = [];
+        for (var i = 0; i < sources.length; i++) {
+            var sourceString = JSON.stringify(sources[i]).toLowerCase();
+            if (sourceString.indexOf(query) != -1) {
+                filteredSources.push(sources[i])
+            }
+        }
+        showSources(filteredSources);
     }
 }

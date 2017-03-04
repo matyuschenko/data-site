@@ -27,7 +27,12 @@ gulp.task('sass', function () {
 gulp.task('js', function () {
     return gulp.src(sourceFolder + '/js/*.js')
         .pipe(gulp.dest(buildFolder + '/js'))
-})
+});
+
+gulp.task('images', function () {
+    return gulp.src(sourceFolder + '/i/*.*')
+        .pipe(gulp.dest(buildFolder + '/i'))
+});
 
 gulp.task('serve', function () {
     browserSync.init({
@@ -48,6 +53,7 @@ gulp.task('default', gulp.series(
     'pug',
     'sass',
     'js',
+    'images',
     gulp.parallel(
         'watch',
         'serve'

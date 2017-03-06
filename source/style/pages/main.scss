@@ -25,6 +25,11 @@
   border-bottom: 1px solid $light-gray;
   display: flex;
   flex-direction: row;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
 }
 
 .source__left, .source__right {
@@ -69,6 +74,7 @@
 
 .source__examples {
   color: $dark-gray;
+  padding-left: 15px;
 }
 
 //.menu {

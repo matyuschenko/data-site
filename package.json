@@ -24,5 +24,8 @@
     "gulp-csso": "^2.0.0",
     "gulp-pug": "^3.2.0",
     "gulp-sass": "^3.0.0"
+  },
+  "dependencies": {
+    "express": "^4.15.1"
   }
 }

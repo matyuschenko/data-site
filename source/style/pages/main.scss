@@ -11,8 +11,37 @@
   text-align: center;
 }
 
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.controls__buttons-wrapper {
+  width: 5%;
+  height: 50px;
+}
+
+.contols__control {
+  width: 25px;
+  height: 25px;
+  margin: auto;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.4em;
+  background-color: $dark-gray;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+
+  @include tablet {
+
+  }
+
+}
+
 .sources__search {
-  width: 100%;
+  width: 95%;
   margin: 20px 0;
   padding: 5px;
   font-size: 32px;

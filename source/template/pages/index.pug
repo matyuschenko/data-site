@@ -9,7 +9,11 @@ block content
 
         .logo
             .logo__text
-        input.sources__search(type="search" placeholder="Search..." autofocus)
+        .controls
+            .controls__buttons-wrapper
+                .contols__control.contols__control_add-source +
+                .contols__control.contols__control_about ?
+            input.sources__search(type="search" placeholder="Search..." autofocus)
         .sources
 
         //aside.menu

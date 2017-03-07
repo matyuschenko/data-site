@@ -9,3 +9,6 @@ data
 
 # Logo
 logo
+
+# Mail config
+mail_config.js

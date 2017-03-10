@@ -14,20 +14,29 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-// setup email data with unicode symbols
-var mailOptions = {
-    from: mailConfig.from, // sender address
-    to: mailConfig.to, // list of receivers
-    subject: mailConfig.subject,
-    text: mailConfig.test
-}
+// process new message
+app.get('/add-source', sendMessage);
+app.get('/contact-us', sendMessage);
 
-transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-        return console.log(error);
+function sendMessage (req, res) {
+
+    // setup email data with unicode symbols
+    var mailOptions = {
+        from: mailConfig.from, // sender address
+        to: mailConfig.to, // list of receivers
+        subject: mailConfig.subject,
+        text: JSON.stringify(req.query)
     }
-    console.log('Message %s sent: %s', info.messageIg, info.response);
-});
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageIg, info.response);
+    });
+
+    res.redirect('/#success');
+};
 
 app.use(express.static('build'));
 app.listen(port);

@@ -8,19 +8,27 @@ block content
     .content-wrapper
 
         .logo
-            .logo__text
+            h1.logo__text
         .controls
-            .controls__buttons-wrapper
-                .contols__control.contols__control_add-source +
-                .contols__control.contols__control_about ?
             input.sources__search(type="search" placeholder="Search..." autofocus)
+            span.controls__control.controls__control_add-source
+            span.controls__control.controls__control_about
         .sources
 
-        //aside.menu
-        //    nav
-        //        ul.menu__list
-        //            li.menu__item.menu__advanced-search
-        //            li.menu__item.menu__ad-source
-        //            li.menu__item.menu__about
-        //            li.menu__item.menu__contact-us
-        //            li.menu__item.menu__login
+    .popup-window.popup-window_add-source
+        .popup-window__content
+            h2.popup-window__header.popup-window__header_add-source
+            p.popup-window__subheader.popup-window__subheader_add-source
+            form.popup-window__form.popup-window__form_add-source(action="add-source")
+                input.popup-window__input.popup-window__input_add-source-url(name="source-url" required)
+                textarea.popup-window__textarea.popup-window__input_add-source-description(name="source-description")
+                input.popup-window__button(type="submit" value="Send")
+        .popup-window__background
+    .popup-window.popup-window_about
+        .popup-window__content.popup-window__content_about
+            h2.popup-window__header.popup-window__header_about
+            p.popup-window__subheader.popup-window__subheader_about
+            form.popup-window__form.popup-window__form_contact-us(action="contact-us")
+                textarea.popup-window__textarea.popup-window__input_contact-us(name="message")
+                input.popup-window__button(type="submit" value="Send")
+        .popup-window__background

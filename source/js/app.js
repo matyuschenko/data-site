@@ -1,8 +1,15 @@
-var lang = 'ru';
+var lang;
 var locale;
 
 $(window).on('load', function () {
+    var thanksMessage;
+
     lang = QueryString.lang || 'en';
+
+    if(window.location.hash && window.location.hash.substring(1) == 'success') {
+        thanksMessage = lang == 'en' ? 'Thanks for your message!' : 'Спасибо за сообщение!';
+        alert(thanksMessage);
+    }
 
     $.getJSON("/data/locale.json", function (data) {
         locale = data;
@@ -17,14 +24,18 @@ $(window).on('load', function () {
         });
     });
 
+    popupsBehavior();
+
 });
 
 function addLabels(locale) {
     for (var selector in locale[lang]['labels']) {
         $(selector).html(locale[lang]['labels'][selector]);
     }
+    for (var selector in locale[lang]['placeholders']) {
+        $(selector).attr('placeholder', locale[lang]['placeholders'][selector]);
+    }
     document.title = locale[lang]['labels']['.logo__text'];
-    $('.sources__search').attr('placeholder', locale[lang]['search'])
 }
 
 function showSources(sources) {
@@ -106,6 +117,17 @@ function searchSources(event, sources) {
         }
         showSources(filteredSources);
     }
+}
+
+function popupsBehavior() {
+    $('.controls__control').on('click', function () {
+        var buttonType = this.classList[1].split('controls__control_')[1];
+        $('.popup-window_' + buttonType).toggleClass('popup-window_active');
+    });
+
+    $('.popup-window__background').on('click', function () {
+        $('.popup-window').removeClass('popup-window_active');
+    })
 }
 
 var QueryString = function () {

@@ -8,3 +8,7 @@ body {
   background-color: $lightest-gray;
   color: $darkest-gray;
 }
+
+body * {
+  box-sizing: border-box;
+}

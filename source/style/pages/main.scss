@@ -42,6 +42,14 @@
   flex: 1;
 }
 
+.source__right {
+  margin-left: 50px;
+
+  @include tablet {
+    margin-left: 0;
+  }
+}
+
 .source__countries {
   display: none;
 }

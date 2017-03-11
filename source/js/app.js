@@ -35,7 +35,6 @@ function addLabels(locale) {
     for (var selector in locale[lang]['placeholders']) {
         $(selector).attr('placeholder', locale[lang]['placeholders'][selector]);
     }
-    document.title = locale[lang]['labels']['.logo__text'];
 }
 
 function showSources(sources) {
@@ -52,6 +51,10 @@ function showSources(sources) {
             spheres,
             examples,
             tags;
+
+        if (s['name_' + lang] == '' || s['description_' + lang] == '') {
+            return;
+        }
 
         source__left = $('<div>').addClass('source__left').appendTo(source);
         source__right = $('<div>').addClass('source__right').appendTo(source);

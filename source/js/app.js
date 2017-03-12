@@ -61,7 +61,7 @@ function showSources(sources) {
         source__left = $('<div>').addClass('source__left').appendTo(source);
         source__right = $('<div>').addClass('source__right').appendTo(source);
 
-        $('<h4>').addClass('source__header').html(s['name_' + lang]).appendTo(source__left);
+        $('<h3>').addClass('source__header').html(s['name_' + lang]).appendTo(source__left);
         $('<a>').addClass('source__link').attr({
             href: s['url'],
             target: '_blank'

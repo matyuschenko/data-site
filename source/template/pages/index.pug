@@ -8,27 +8,27 @@ block content
     .content-wrapper
 
         .logo
-            h1.logo__text
+            h1.logo__text Open Data & Statistics Information<sup>&#946;</sup>
         .controls
             input.sources__search(type="search" placeholder="Search..." autofocus)
-            span.controls__control.controls__control_add-source
-            span.controls__control.controls__control_about
+            span.controls__control.controls__control_add-source Add source
+            span.controls__control.controls__control_about About us
         .sources
 
     .popup-window.popup-window_add-source
         .popup-window__content
-            h2.popup-window__header.popup-window__header_add-source
-            p.popup-window__subheader.popup-window__subheader_add-source
+            h2.popup-window__header.popup-window__header_add-source Add open data source
+            p.popup-window__subheader.popup-window__subheader_add-source Contribute to our list — share a source
             form.popup-window__form.popup-window__form_add-source(action="add-source")
-                input.popup-window__input.popup-window__input_add-source-url(name="source-url" required)
-                textarea.popup-window__textarea.popup-window__input_add-source-description(name="source-description")
+                input.popup-window__input.popup-window__input_add-source-url(name="source-url" placeholder="https://awesomedata.com" required)
+                textarea.popup-window__textarea.popup-window__input_add-source-description(name="source-description" placeholder="Please describe your source: name, industry, country, language, data examples, purposes, etc.")
                 input.popup-window__button(type="submit" value="Send")
         .popup-window__background
     .popup-window.popup-window_about
         .popup-window__content.popup-window__content_about
-            h2.popup-window__header.popup-window__header_about
-            p.popup-window__subheader.popup-window__subheader_about
+            h2.popup-window__header.popup-window__header_about About
+            p.popup-window__subheader.popup-window__subheader_about We gather sources of open data and share them with community.
             form.popup-window__form.popup-window__form_contact-us(action="contact-us")
-                textarea.popup-window__textarea.popup-window__input_contact-us(name="message")
+                textarea.popup-window__textarea.popup-window__input_contact-us(name="message" placeholder="What's on your mind? Don't forget to include your contacts in message so we could respond!")
                 input.popup-window__button(type="submit" value="Send")
         .popup-window__background

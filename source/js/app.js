@@ -13,7 +13,9 @@ $(window).on('load', function () {
 
     $.getJSON("/data/locale.json", function (data) {
         locale = data;
-        addLabels(locale);
+        if (lang != 'en') {
+            addLabels(locale);
+        }
     });
 
     $.getJSON("/data/sources.json", function (sources) {

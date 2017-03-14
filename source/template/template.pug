@@ -3,13 +3,15 @@ include common/mixins
 block variables
 
 doctype html
-html(lang="ru")
+html(lang="en")
     head
         meta(charset="utf-8")
         title #{title}
-        meta(name="description" content="")
+        meta(name="description" content=desciption)
         meta(property="og:type" content="website")
         meta(property="og:title" content=title)
+        meta(property="og:description" content=desciption)
+        meta(property="og:url" content="databarn.info")
         meta(name="viewport" content="width=device-width, initial-scale=1")
         meta(http-equiv="x-ua-compatible" content="ie=edge")
         meta(http-equiv="x-ua-compatible" content="ie=edge")
@@ -25,3 +27,5 @@ html(lang="ru")
 
     body
         block content
+
+        <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter43453644 = new Ya.Metrika({ id:43453644, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/43453644" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->

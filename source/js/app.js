@@ -22,8 +22,9 @@ $(window).on('load', function () {
     $.getJSON("/data/sources.json", function (sources) {
         showSources(sources, locale);
 
-        $('.sources__search').on('keyup input', function(event) {
-            searchSources(event, sources);
+        $('.sources__search').on('input', function() {
+            var query = this.value;
+            searchSources(query, sources);
         });
     });
 
@@ -111,8 +112,8 @@ function showSources(sources) {
     });
 }
 
-function searchSources(event, sources) {
-    query = event.target.value;
+function searchSources(query, sources) {
+    var filteredSources;
     if (query == '') {
         showSources(sources);
     } else {

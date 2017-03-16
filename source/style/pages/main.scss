@@ -117,10 +117,15 @@
 
 .popup-window__content {
   width: 80vw;
-  height: 80vh;
+  min-height: 80vh;
   z-index: 10;
   padding: 5vh 5vw;
   background-color: $lightest-gray;
+
+  @include tablet {
+    font-size: 12px;
+  }
+
 }
 
 .popup-window__input {

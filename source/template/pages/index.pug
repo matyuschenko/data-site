@@ -9,6 +9,8 @@ block content
     .content-wrapper
 
         .logo
+            a(href='#')
+                img.logo__pic(src='./i/databarn.png' title="DataBarn logo" alt="DataBarn logo")
             h1.logo__text Open Data & Statistics<sup>&#946;</sup>
         .controls
             input.sources__search(type="search" placeholder="Search..." autofocus)
@@ -29,7 +31,7 @@ block content
     .popup-window.popup-window_about
         .popup-window__content.popup-window__content_about
             h2.popup-window__header.popup-window__header_about About
-            p.popup-window__text.popup-window__text_about-1 DataBarn is a list of open data sources. We gather links to sources, describe them and power with search, which helps you to find the relevant data.
+            p.popup-window__text.popup-window__text_about-1 DataBarn is a list of open data sources. We gather links to websites, describe them and power with search, which helps you to find the relevant data.
             p.popup-window__text.popup-window__text_about-2 Our users are analysts, journalists, students, investigators, scientists and other people interested in working with data. Send your ideas and suggestions via form below or by email (datasite at yandex dot ru).
             form.popup-window__form.popup-window__form_contact-us(action="contact-us")
                 textarea.popup-window__textarea.popup-window__input_contact-us(name="message" placeholder="What's on your mind? Don't forget to include your contacts in message so we could respond!")

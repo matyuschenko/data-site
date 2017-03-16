@@ -2,7 +2,24 @@
   width: 90%;
   max-width: 1200px;
   margin: auto;
-  padding: 5%;
+  padding: 4% 6%;
+}
+
+.logo__pic {
+  width: 7%;
+  position: fixed;
+  left: 20px;
+  top: 35px;
+  transition: all .1s linear;
+
+  @include tablet {
+    display: none;
+  }
+
+  &:hover {
+    transform: rotate(360deg);
+  }
+
 }
 
 .logo__text {

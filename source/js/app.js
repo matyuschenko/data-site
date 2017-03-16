@@ -9,6 +9,7 @@ $(window).on('load', function () {
     if(window.location.hash && window.location.hash.substring(1) == 'success') {
         thanksMessage = lang == 'en' ? 'Thanks for your message!' : 'Спасибо за сообщение!';
         alert(thanksMessage);
+        // window.location.replace('/?lang=' + lang);
     }
 
     $.getJSON("/data/locale.json", function (data) {
@@ -21,7 +22,7 @@ $(window).on('load', function () {
     $.getJSON("/data/sources.json", function (sources) {
         showSources(sources, locale);
 
-        $('.sources__search').on('keyup', function(event) {
+        $('.sources__search').on('keyup input', function(event) {
             searchSources(event, sources);
         });
     });
@@ -37,6 +38,8 @@ function addLabels(locale) {
     for (var selector in locale[lang]['placeholders']) {
         $(selector).attr('placeholder', locale[lang]['placeholders'][selector]);
     }
+    document.title = locale[lang]['title'];
+    $('meta[name=description]').attr('content', locale[lang]['description']);
 }
 
 function showSources(sources) {

@@ -57,28 +57,44 @@
 
 .source__left, .source__right {
   flex: 1;
+  // display: flex;
+  // flex-direction: column;
 }
 
 .source__right {
   margin-left: 50px;
+  padding-left: 15px;
+  // display: flex;
+  // flex-direction: column;
 
   @include tablet {
     margin-left: 0;
   }
 }
 
+.source__header{
+  display: inline-block;
+}
+
 .source__countries {
-  display: none;
-}
-
-.source__languages {
+  display: inline-block;
+  margin: 0 0 0 10px;
   padding: 0;
+  vertical-align: calc;
+  list-style-type: none;
 }
 
-.source__language {
+.source__country {
   display: inline-block;
   margin: 0 3px;
-  list-style-type: none;
+}
+
+.source__flag {
+  width: 18px;
+}
+
+.source__link {
+  display: block;
 }
 
 .source__period {
@@ -96,6 +112,7 @@
 .source__tag {
   display: inline-block;
   color: $dark-gray;
+  color: $barn-color;
   margin: 0 3px;
 
   &:before {
@@ -105,7 +122,21 @@
 
 .source__examples {
   color: $dark-gray;
-  padding-left: 15px;
+  padding: 0;
+}
+
+.examples__label {
+  margin: 0;
+}
+
+.source__example {
+  list-style-type: none;
+
+  &:before {
+    padding-right: 10px;
+    content: '•';
+    // color: $barn-color;
+  }
 }
 
 .popup-window {

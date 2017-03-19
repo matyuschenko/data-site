@@ -66,32 +66,27 @@ function showSources(sources) {
         source__right = $('<div>').addClass('source__right').appendTo(source);
 
         $('<h3>').addClass('source__header').html(s['name_' + lang]).appendTo(source__left);
+        countries = $('<ul>').addClass('source__countries').appendTo(source__left);
         $('<a>').addClass('source__link').attr({
             href: s['url'],
             target: '_blank'
         }).html(s['url']).appendTo(source__left);
         $('<p>').addClass('source__description').html(s['description_' + lang]).appendTo(source__left);
-        countries = $('<ul>').addClass('source__countries').appendTo(source__left);
-        languages = $('<ul>').addClass('source__languages').appendTo(source__left);
         $('<span>').addClass('source__period').html(s['period']).appendTo(source__left);
         $('<span>').addClass('source__machine-readable_' + s['machine_readability']).appendTo(source__left);
         spheres = $('<ul>').addClass('source__spheres').appendTo(source__left);
+
         examples = $('<ul>').addClass('source__examples').appendTo(source__right);
-        tags = $('<ul>').addClass('source__tags').appendTo(source__left);
+        tags = $('<ul>').addClass('source__tags').appendTo(source__right);
 
         $(s['countries'].split(';')).each(function (i, c) {
-            $('<li>').addClass('source__country').html(c).appendTo(countries);
-        });
-
-        $(s['languages'].split(';')).each(function (i, c) {
-            var flag = $('<li>').addClass('source__language').appendTo(languages);
+            var flag = $('<li>').addClass('source__country').appendTo(countries);
 
             $('<img>').attr({
                 src: '/i/flag-' + c + '.png',
                 alt: c,
-                width: 16,
-                height: 11,
-                title: locale[lang]['languages'][c]
+                class: 'source__flag',
+                title: locale[lang]['countries'][c]
             }).appendTo(flag);
         });
 
@@ -99,7 +94,7 @@ function showSources(sources) {
             $('<li>').addClass('source__sphere').html(c).appendTo(spheres);
         });
 
-        $('<p>').html(locale[lang]['examples'] + ':').appendTo(examples);
+        $('<p>').addClass('examples__label').html(locale[lang]['examples'] + ':').appendTo(examples);
         $(s['examples_' + lang].split(';')).each(function (i, c) {
             $('<li>').addClass('source__example').html(c).appendTo(examples);
         });

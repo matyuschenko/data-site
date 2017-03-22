@@ -22,10 +22,14 @@
 
 }
 
-.logo__text {
+.logo__text-wrapper {
   margin: auto;
   font-size: 32px;
   text-align: center;
+}
+
+.logo__beta-char {
+  color: $barn-color;
 }
 
 .sources__search {

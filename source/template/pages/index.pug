@@ -11,11 +11,13 @@ block content
         .logo
             a(href='#')
                 img.logo__pic(src='./i/databarn.png' title="DataBarn logo" alt="DataBarn logo")
-            h1.logo__text Open Data & Statistics<sup>&#946;</sup>
+            h1.logo__text-wrapper
+                span.logo__text Open Data & Statistics
+                sup.logo__beta-char(title="This site is in early beta! Please submit all the bugs via form in \"About Us\"") &#946;
         .controls
             input.sources__search(type="search" placeholder="Search..." autofocus)
-            span.controls__control.controls__control_add-source Add source
-            span.controls__control.controls__control_about About us
+            span.controls__control.controls__control_add-source Add Source
+            span.controls__control.controls__control_about About Us
         .sources
 
     .popup-window.popup-window_add-source

@@ -162,9 +162,10 @@
 
 .source__tag {
   display: inline-block;
+  margin: 0 3px;
   color: $dark-gray;
   color: $barn-color;
-  margin: 0 3px;
+  font-size: 13px;
 
   &:before {
     content: '#';
@@ -205,6 +206,12 @@
   }
 }
 
+.popup-window__header {
+  @include tablet {
+    margin-bottom: 0;
+  }
+}
+
 .popup-window__background {
   position: fixed;
   top: 0;
@@ -216,13 +223,14 @@
 
 .popup-window__content {
   width: 80vw;
-  min-height: 80vh;
+  // max-height: 80vh;
   z-index: 10;
   padding: 5vh 5vw;
   background-color: $lightest-gray;
 
   @include tablet {
     font-size: 12px;
+    padding: 3vh 5vw;
   }
 
 }
@@ -230,6 +238,11 @@
 .popup-window__input {
   width: 100%;
   margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+
 }
 
 .popup-window__textarea {
@@ -238,4 +251,9 @@
   margin-bottom: 20px;
   resize: none;
   padding: 5px;
+
+  @include tablet {
+    margin-bottom: 12px;
+  }
+
 }

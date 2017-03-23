@@ -23,7 +23,7 @@ $(window).on('load', function () {
         showSources(sources, locale);
 
         $('.sources__search').on('input', function() {
-            var query = this.value;
+            var query = this.value.toLowerCase();
             searchSources(query, sources);
         });
     });

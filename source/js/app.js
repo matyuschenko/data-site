@@ -4,16 +4,18 @@ var locale;
 $(window).on('load', function () {
     var thanksMessage;
 
-    lang = QueryString.lang || 'en';
-
-    if(window.location.hash && window.location.hash.substring(1) == 'success') {
-        thanksMessage = lang == 'en' ? 'Thanks for your message!' : 'Спасибо за сообщение!';
-        alert(thanksMessage);
-        // window.location.replace('/?lang=' + lang);
-    }
-
     $.getJSON("/data/locale.json", function (data) {
+
         locale = data;
+
+        lang = QueryString.lang in locale ? QueryString.lang : 'en';
+
+        if(window.location.hash && window.location.hash.substring(1) == 'success') {
+            thanksMessage = lang == 'en' ? 'Thanks for your message!' : 'Спасибо за сообщение!';
+            alert(thanksMessage);
+            // window.location.replace('/?lang=' + lang);
+        }
+
         if (lang != 'en') {
             addLabels(locale);
         }

@@ -6,11 +6,15 @@ $darkest-gray: #424242;
 $barn-color: rgb(148, 54, 40);
 
 body {
-  font-family: "Helvetica Neue", Tahoma, sans-serif;
+  font-family: 'PT Sans', 'Helvetica Neue', Tahoma, sans-serif;
   background-color: $lightest-gray;
   color: $darkest-gray;
 }
 
 body * {
   box-sizing: border-box;
+}
+
+a {
+    color: $barn-color;
 }

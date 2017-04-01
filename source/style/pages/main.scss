@@ -71,8 +71,14 @@
 
 .logo__text-wrapper {
   margin: auto;
-  font-size: 32px;
+  font-size: 40px;
   text-align: center;
+  font-family: 'Yeseva One';
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 32px;
+  }
 }
 
 .logo__beta-char {
@@ -83,8 +89,12 @@
   width: 100%;
   margin: 20px 0;
   padding: 5px;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 100;
+
+  @include tablet {
+    font-size: 16px;
+  }
 }
 
 .controls__control {

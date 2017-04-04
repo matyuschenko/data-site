@@ -14,10 +14,15 @@ block content
             h1.logo__text-wrapper
                 span.logo__text Open Data & Statistics
                 sup.logo__beta-char(title="This site is in early beta! Please submit all the bugs via form in \"About Us\"") &#946;
+        input.sources__search(type="search" placeholder="Search..." autofocus)
         .controls
-            input.sources__search(type="search" placeholder="Search..." autofocus)
             span.controls__control.controls__control_add-source Add Source
             span.controls__control.controls__control_about About
+            a(href='https://t.me/databarn' target='_blank' title='Join our Telegram channel')
+                i.controls__icon.fa.fa-telegram(aria-hidden="true")
+            a(href='http://eepurl.com/cJCpNf' target='_blank' title='Subscribe to our Newsletter')
+                i.controls__icon.controls__icon_active.fa.fa-envelope(aria-hidden="true")
+            //- div.subscribe-cta Subscribe to our Newsletter
         .sources
 
     .popup-window.popup-window_add-source

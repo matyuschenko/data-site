@@ -32,6 +32,10 @@ $(window).on('load', function () {
 
     popupsBehavior();
 
+    $('.controls__icon_active').on('mouseover', function() {
+        $(this).removeClass('controls__icon_active');
+    });
+
 });
 
 function addLabels(locale) {
